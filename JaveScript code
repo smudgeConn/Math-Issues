@@ -1,0 +1,35 @@
+Math.round = function(number) {
+  console.log(number)
+  let numArr = Array.from(number.toString())
+//  console.log(numArr)
+  let decIdx = numArr.indexOf('.')
+//  console.log(decIdx)
+
+  if (!numArr.includes('.')) {
+    return number;} 
+
+  if (numArr[decIdx+1] < 5) {
+    let roundNum = numArr.slice(0, decIdx).join('');
+    console.log(roundNum)
+    return parseInt(roundNum);
+  } 
+  
+  else if (numArr[decIdx+1] >= 5) {
+    let roundNum = numArr.slice(0, decIdx).join('');
+    return parseInt(roundNum)+1;
+  }
+};
+
+Math.ceil = function(number) {
+  let numArr = Array.from(number.toString())
+  let decIdx = numArr.indexOf('.')
+  
+  if (!numArr.includes('.')) {
+    return number;}
+  
+  else {return parseInt(number)+1;}
+};
+
+Math.floor = function(number) {
+  return Math.trunc(number)
+};
